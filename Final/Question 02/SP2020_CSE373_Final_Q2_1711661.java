@@ -10,7 +10,7 @@ public class SP2020_CSE373_Final_Q2_1711661 {
 	public static void main(String[] args) throws Exception 
 	 { 
 	   
-		File file = new File("C:\\Users\\fahim\\eclipse-workspace\\FinalAss\\src\\com\\nsu\\spring2020\\ID1711661\\FinalQ1Input.txt"); 
+		File file = new File("C:\\Program Files\\Git\\1711661_SP2020_CSE373_Final\\Final\\Question 02\\FinalQ1Input.txt"); 
 	    Scanner sc = new Scanner(file); 
 	  
 	    while (sc.hasNextLine()) 
@@ -41,7 +41,7 @@ public class SP2020_CSE373_Final_Q2_1711661 {
 	}	
 
 void setupgraph() throws Exception {
-	File file = new File("C:\\Users\\fahim\\eclipse-workspace\\FinalAss\\src\\com\\nsu\\spring2020\\ID1711661\\FinalQ1Input.txt"); 
+	File file = new File("C:\\Program Files\\Git\\1711661_SP2020_CSE373_Final\\Final\\Question 02\\FinalQ1Input.txt"); 
     Scanner fin = new Scanner(file); 
     
     //int numv  = fin.nextInt();
