@@ -104,3 +104,25 @@ void DFS()
 	System.out.println();
 	System.out.printf("DFS - found %d components.%n", numComponets);
 }
+
+void DFS(int at, boolean[] V)
+{
+	System.out.printf("Node %s in the DFS%n",namelist.get(at));
+	
+	V[at]=true;
+	for (int i=0; i<N; ++i)
+		if (G[at][i] && !V[i])
+		{
+			System.out.printf("node %s:",namelist.get(i));
+			DFS(i,V);
+		}
+	System.out.printf("done node: %s%n", namelist.get(at));
+	}
+}
+
+
+
+
+
+
+
