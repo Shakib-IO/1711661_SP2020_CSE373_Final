@@ -89,3 +89,18 @@ void setupgraph() throws Exception {
 }
 
 
+void DFS()
+{
+	boolean[] V=new boolean[N]; 
+	int numComponets=0; // the number of components in the graph
+	for (int i=0; i<N; ++i)
+		if (!V[i])
+		{
+			++numComponets;
+			System.out.printf("Starting a DFS for  %d and starting at node %s%n",numComponets,namelist.get(i));
+			
+			DFS(i,V);
+		}
+	System.out.println();
+	System.out.printf("DFS - found %d components.%n", numComponets);
+}
