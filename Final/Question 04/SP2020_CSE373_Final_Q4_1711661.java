@@ -10,7 +10,7 @@ public class SP2020_CSE373_Final_Q4_1711661 {
     static int[] dist;
 
     public static void main(String[] args) throws Exception {
-        Scanner sc = new Scanner(new File("C:\\\\Users\\\\fahim\\\\eclipse-workspace\\\\FinalAss\\\\src\\\\com\\\\nsu\\\\spring2020\\\\ID1711661\\\\FinalQ1Input.txt"));
+        Scanner sc = new Scanner(new File("C:\\Program Files\\Git\\1711661_SP2020_CSE373_Final\\Final\\Question 04\\FinalQ1Input.txt"));
         int n =200;
         cost = new int[n][n];
         dist = new int[n];
