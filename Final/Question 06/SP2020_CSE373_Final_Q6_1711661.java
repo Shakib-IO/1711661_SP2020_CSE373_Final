@@ -50,20 +50,7 @@ public class SP2020_CSE373_Final_Q6_1711661 {
 	returnArr[1] = count;
 	return returnArr;
 }
-private static int[][] calculatePMoves(int[] currentBoard) {
-		
-		int[][] isboard = new int[currentBoard.length][currentBoard.length];
-		for (int i = 0; i < currentBoard.length; i++) {
-			int[] newBoard = currentBoard.clone();
-			for (int j = 0; j < currentBoard.length; j++) {
-				newBoard[i] = j;
-				if(i == currentBoard[j]) {
-					isboard[i][j] = 1000;
-				}
-			}
-		}
-		return isboard;
-	}
+
 private static int[] traverseToNeighbor(int min, int printCount, int[] currentBoard, int[][] cboard) 
 {
 	ArrayList<int[]> minimumPositions = new ArrayList<>();
@@ -81,4 +68,20 @@ private static int[] traverseToNeighbor(int min, int printCount, int[] currentBo
 	}
 	return cb;
  }
+private static int[][] calculatePMoves(int[] currentBoard) {
+	
+	int[][] isboard = new int[currentBoard.length][currentBoard.length];
+	for (int i = 0; i < currentBoard.length; i++) {
+		int[] newBoard = currentBoard.clone();
+		for (int j = 0; j < currentBoard.length; j++) {
+			newBoard[i] = j;
+			if(i == currentBoard[j]) {
+				isboard[i][j] = 1000;
+			}
+		}
+	}
+	return isboard;
+}
+
+
 }
