@@ -9,7 +9,7 @@ public class SP2020_CSE373_Final_Q6_1711661 {
 	public static void main(String[] args) throws Exception {
 		
 		
-		File file = new File("C:\\Users\\fahim\\eclipse-workspace\\FinalAss\\src\\com\\nsu\\spring2020\\ID1711661\\SP2020_CSE373_FinalQ6_1711661.txt"); 
+		File file = new File("C:\\Program Files\\Git\\1711661_SP2020_CSE373_Final\\Final\\Question 06\\Data\\SP2020_CSE373_FinalQ6_1711661.txt"); 
 	    Scanner sc = new Scanner(file); 
 	    int n = Integer.parseInt(sc.nextLine());
 		sc.close();
