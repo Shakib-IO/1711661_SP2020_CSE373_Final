@@ -11,7 +11,8 @@ public class SP2020_CSE373_Final_Q4_1711661 {
 
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(new File("C:\\Program Files\\Git\\1711661_SP2020_CSE373_Final\\Final\\Question 04\\FinalQ1Input.txt"));
-        int n =200;
+        int n = 200;
+        
         cost = new int[n][n];
         dist = new int[n];
         for (int i = 0; i < n; i++) {
@@ -49,7 +50,6 @@ public class SP2020_CSE373_Final_Q4_1711661 {
                     dis = dist[j];
                     u = j;
                     for (int k = j + 1; k < s.length; k++) {
-
                         if (dis > dist[k] && s[k] == 0) {
                             dis = dist[k];
                             u = k;
