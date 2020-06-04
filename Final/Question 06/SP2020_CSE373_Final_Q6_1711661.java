@@ -28,6 +28,30 @@ public class SP2020_CSE373_Final_Q6_1711661 {
 				neighbours.add(neighbourVal);
 		}
 	}
+	
+	public static ArrayList<Climb> readClimbs(String s) throws Exception{
+	       ArrayList<Climb> climbArrayList = new ArrayList<>();
+	     
+	       File file = new File("C:\\Program Files\\Git\\1711661_SP2020_CSE373_Final\\Final\\Question 06\\Data\\SP2020_CSE373_FinalQ6_1711661.txt"); 
+	        BufferedReader br = new BufferedReader(new FileReader(file));
+	       int valid=0,invalid=0;
+	       String st;
+	       while ((st = br.readLine()) != null) {
+	           String[] arr = st.split("");
+	           if(arr.length==6){
+	               valid++;
+	               climbArrayList.add(new Climb(Integer.parseInt(arr[0]),arr[1],arr[2],Double.parseDouble(arr[3]),Double.parseDouble(arr[4]),Double.parseDouble(arr[5])));
+	           }else{
+	               invalid++;
+	           }
+	       }
+	       System.out.println("Adding "+valid+" climb activities");
+	       if(invalid>0){
+	           System.out.println("Ignoring "+invalid+" invalid climb activities");
+	       }
+	     
+	       return climbArrayList;
+	       }
 	Double max = -Math.abs(orgPoint[0]-2)- Math.abs(0.5*orgPoint[1]+1) +3;
 	Boolean triggered = false;
 	for (int y = 0; y < neighbours.size(); y++) {
@@ -51,23 +75,6 @@ public class SP2020_CSE373_Final_Q6_1711661 {
 	return returnArr;
 }
 
-private static int[] traverseToNeighbor(int min, int printCount, int[] currentBoard, int[][] cboard) 
-{
-	ArrayList<int[]> minimumPositions = new ArrayList<>();
-	
-	int[] cb = new int[currentBoard.length];
-	cb = currentBoard.clone();
-	
-	for (int i = 0; i < cboard.length; i++) {
-		for (int j = 0; j < cboard.length; j++) {
-			if (min == cboard[i][j] && currentBoard[j]!=i) {
-				int[] position = {i, j};
-				minimumPositions.add(position);
-			}
-		}
-	}
-	return cb;
- }
 private static int[][] calculatePMoves(int[] currentBoard) {
 	
 	int[][] isboard = new int[currentBoard.length][currentBoard.length];
