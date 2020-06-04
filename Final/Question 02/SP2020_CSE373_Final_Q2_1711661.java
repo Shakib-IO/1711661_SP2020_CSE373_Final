@@ -9,7 +9,6 @@ public class SP2020_CSE373_Final_Q2_1711661 {
 	
 	public static void main(String[] args) throws Exception 
 	 { 
-	   
 		File file = new File("C:\\Program Files\\Git\\1711661_SP2020_CSE373_Final\\Final\\Question 02\\FinalQ1Input.txt"); 
 	    Scanner sc = new Scanner(file); 
 	  
@@ -49,14 +48,14 @@ void setupgraph() throws Exception {
 	N = numEdges+1;
 	
 	G=new boolean[N][N];
-	//System.out.print(numv);
 	System.out.print(" " +numEdges);
 	System.out.print(N);
 	System.out.print("\n");
 	namelist = new ArrayList<String>();
 	people = new TreeMap<String,Integer>();
 	
-	for (int i=0; i<numEdges; i++) {
+	for (int i=0; i<numEdges; i++) 
+	{
 		String student1 = fin.next();
 		String student2 = fin.next();
 		
@@ -66,7 +65,8 @@ void setupgraph() throws Exception {
 		if (people.containsKey(student1))
 			index1 = (Integer)people.get(student1);
 		
-		else {
+		else 
+		{
 			index1 = people.size();
 			namelist.add(student1);
 			System.out.println("Added "+student1+" as "+index1);
@@ -77,7 +77,8 @@ void setupgraph() throws Exception {
 		if (people.containsKey(student2))
 			index2 = (Integer)people.get(student2);
 		
-		else {
+		else 
+		{	
 			index2 = people.size();
 			namelist.add(student2);
 			System.out.println("Added "+student2+" as "+index2);
@@ -88,7 +89,6 @@ void setupgraph() throws Exception {
 	}  
 }
 
-
 void DFS()
 {
 	boolean[] V=new boolean[N]; 
@@ -98,7 +98,6 @@ void DFS()
 		{
 			++numComponets;
 			System.out.printf("Starting a DFS for  %d and starting at node %s%n",numComponets,namelist.get(i));
-			
 			DFS(i,V);
 		}
 	System.out.println();
@@ -119,10 +118,3 @@ void DFS(int at, boolean[] V)
 	System.out.printf("done node: %s%n", namelist.get(at));
 	}
 }
-
-
-
-
-
-
-
