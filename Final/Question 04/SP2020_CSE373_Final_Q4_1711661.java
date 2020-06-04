@@ -9,12 +9,16 @@ public class SP2020_CSE373_Final_Q4_1711661 {
 	static int[][] cost;
     static int[] dist;
 
-    public static void main(String[] args) throws Exception {
-        Scanner sc = new Scanner(new File("C:\\Program Files\\Git\\1711661_SP2020_CSE373_Final\\Final\\Question 04\\FinalQ1Input.txt"));
-        int n = 200;
-        
+    public static void main(String[] args) throws Exception 
+    {
+        File file = new File("C:\\Program Files\\Git\\1711661_SP2020_CSE373_Final\\Final\\Question 04\\FinalQ1Input.txt");
+        Scanner sc = new Scanner(file); 
+	    int n = Integer.parseInt(sc.nextLine());
+        //int n = 200;
+ 
         cost = new int[n][n];
         dist = new int[n];
+        
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 if (i == j) {
@@ -24,6 +28,7 @@ public class SP2020_CSE373_Final_Q4_1711661 {
                 }
             }
         }
+        
         for (int i = 0; i < n; i++) {
             String[] s = sc.nextLine().trim().split("\t");
             int v = Integer.parseInt(s[0]);
@@ -35,41 +40,57 @@ public class SP2020_CSE373_Final_Q4_1711661 {
 
            shortestPath(0,n);
     }
+    
     static void shortestPath(int v, int n) {
         int[] s = new int[n];
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) 
+        {
             s[i] = 0;
             dist[i] = cost[v][i];
         }
         s[v] = 1;
         dist[v] = 0;
-        for (int i = 1; i < n - 1; i++) {
+        for (int i = 1; i < n - 1; i++) 
+        {
             int u = 0, dis = 0;
-            for (int j = 0; j < s.length; j++) {
-                if (s[j] == 0) {
+            for (int j = 0; j < s.length; j++) 
+            {
+                if (s[j] == 0) 
+                {
                     dis = dist[j];
                     u = j;
-                    for (int k = j + 1; k < s.length; k++) {
-                        if (dis > dist[k] && s[k] == 0) {
+                    for (int k = j + 1; k < s.length; k++) 
+                    {
+                        if (dis > dist[k] && s[k] == 0) 
+                        {
                             dis = dist[k];
                             u = k;
                         }
                     }
                     break;
                 }
-
             }
             s[u] = 1;
-            for (int j = 1; j < n; j++) {
-                if (s[j] == 0) {
-                    if (dist[j] > (dist[u] + cost[u][j])) {
+            for (int j = 1; j < n; j++) 
+            {
+                if (s[j] == 0) 
+                {
+                    if (dist[j] > (dist[u] + cost[u][j])) 
+                    {
                         dist[j] = dist[u] + cost[u][j];
 
                     }
                 }
             }
         }
-
+    }
+    static void printpath(int [] pred , int s , int e) {
+    	java.util.ArrayList path =  new java.util.ArrayList();
+    	int x = e ;
+    	while(x!=s) {
+    		path.add(0, x);
+    		x = pred[x];
+    	}
     }
 
 }
