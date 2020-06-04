@@ -22,7 +22,9 @@ public class SP2020_CSE373_Final_Q6_1711661 {
 	Double[] neighbourVal = new Double[2];
 	for (int x = 0; x < 100; x++) {
 		Double[] val = coords[x];
-		if ((Math.abs(orgPoint[0] - val[0]) <= stepSize) || (Math.abs(orgPoint[1] - val[1]) <= stepSize)){
+		if ((Math.abs(orgPoint[0] - val[0]) <= stepSize) || (orgPoint[0] - val[0]) => stepSize) || 
+			(Math.abs(orgPoint[1] - val[1]) <= stepSize))
+		{
 				neighbourVal[0] = val[0];
 				neighbourVal[1] = val[1];
 				neighbours.add(neighbourVal);
@@ -33,7 +35,7 @@ public class SP2020_CSE373_Final_Q6_1711661 {
 	       ArrayList<Climb> climbArrayList = new ArrayList<>();
 	     
 	       File file = new File("C:\\Program Files\\Git\\1711661_SP2020_CSE373_Final\\Final\\Question 06\\Data\\SP2020_CSE373_FinalQ6_1711661.txt"); 
-	        BufferedReader br = new BufferedReader(new FileReader(file));
+	       BufferedReader br = new BufferedReader(new FileReader(file));
 	       int valid=0,invalid=0;
 	       String st;
 	       while ((st = br.readLine()) != null) {
@@ -52,8 +54,10 @@ public class SP2020_CSE373_Final_Q6_1711661 {
 	     
 	       return climbArrayList;
 	       }
+	
 	Double max = -Math.abs(orgPoint[0]-2)- Math.abs(0.5*orgPoint[1]+1) +3;
 	Boolean triggered = false;
+	
 	for (int y = 0; y < neighbours.size(); y++) {
 		Double[] val = neighbours.get(y);
 		
@@ -88,7 +92,5 @@ private static int[][] calculatePMoves(int[] currentBoard) {
 		}
 	}
 	return isboard;
-}
-
-
+	}
 }
