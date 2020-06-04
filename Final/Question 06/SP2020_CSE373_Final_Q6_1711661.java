@@ -36,7 +36,7 @@ public class SP2020_CSE373_Final_Q6_1711661 {
 	     
 	       File file = new File("C:\\Program Files\\Git\\1711661_SP2020_CSE373_Final\\Final\\Question 06\\Data\\SP2020_CSE373_FinalQ6_1711661.txt"); 
 	       BufferedReader br = new BufferedReader(new FileReader(file));
-	       int valid=0,invalid=0;
+	       int valid=0 , invalid=0;
 	       String st;
 	       while ((st = br.readLine()) != null) {
 	           String[] arr = st.split("");
@@ -48,7 +48,8 @@ public class SP2020_CSE373_Final_Q6_1711661 {
 	           }
 	       }
 	       System.out.println("Adding "+valid+" climb activities");
-	       if(invalid>0){
+	       if(invalid > 0)
+	       {
 	           System.out.println("Ignoring "+invalid+" invalid climb activities");
 	       }
 	     
@@ -56,7 +57,6 @@ public class SP2020_CSE373_Final_Q6_1711661 {
 	       }
 	
 	Double max = -Math.abs(orgPoint[0]-2)- Math.abs(0.5*orgPoint[1]+1) +3;
-	Boolean triggered = false;
 	
 	for (int y = 0; y < neighbours.size(); y++) {
 		Double[] val = neighbours.get(y);
